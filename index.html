@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Right Click Disabled</title>
-    <script>
-        document.addEventListener("contextmenu", event => event.preventDefault());
-        document.addEventListener("copy", event => event.preventDefault());
-        document.addEventListener("cut", event => event.preventDefault());
-        document.addEventListener("paste", event => event.preventDefault());
-        document.addEventListener("keydown", function(event) {
-            if ((event.ctrlKey || event.metaKey) && (event.key === "c" || event.key === "u" || event.key === "x" || event.key === "v" || event.key === "a")) {
-                event.preventDefault();
-            }
-        });
-        document.addEventListener("selectstart", event => event.preventDefault());
-        document.addEventListener("mousedown", event => event.preventDefault());
-        document.addEventListener("mouseup", event => event.preventDefault());
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
-        p, h1 {
-            pointer-events: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Right Click Disabled</title>
+  <script>
+    document.addEventListener("contextmenu", event => event.preventDefault());
+    document.addEventListener("copy", event => event.preventDefault());
+    document.addEventListener("cut", event => event.preventDefault());
+    document.addEventListener("paste", event => event.preventDefault());
+    document.addEventListener("keydown", function(event) {
+      if (event.ctrlKey && (event.key === "c" || event.key === "u" || event.key === "x" || event.key === "v" || event.key === "a")) {
+        event.preventDefault();
+      }
+    });
+    document.addEventListener("selectstart", event => event.preventDefault());
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-    <h1>Test Page for Right Click Block</h1>
-    <p>Right-clicking, copying, and selecting text are disabled on this page.</p>
+<h1>Test Page for Right Click Block</h1>
+<p>Right-clicking, copying, and selecting text are disabled on this page.</p>
 </body>
 </html>
